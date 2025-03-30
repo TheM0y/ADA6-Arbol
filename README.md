@@ -1,4 +1,7 @@
 # ADA6 - Implemetación de Arboles
-Este programa usa la estructura de datso de tipo arbol
+Este programa consiste en una estructura de tipo árbol. A partir del nodo raíz se crearan nodos hijo cuya información serán las raíces cuadradas de los nodo padre.
 
 ## Librerías
+math:
+
+## Clases 
