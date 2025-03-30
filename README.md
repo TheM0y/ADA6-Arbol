@@ -5,3 +5,5 @@ En esta clase se se generan los modos hijos del árbol, cuya información serán
 
 ### Arbol:
 Esta clase se encarga de imprimir todo el árbol usando identación en sus nodos y valores.
+
+Después de definir las clases se crea un objeto a partir de la clase 'Arbol', dicha clse tiene dos parametros, 'valor_matriz' y 'max_nivel', que se definen mediante dos inputs del mismo nombre. Por último imprime el árbol mediante el llamado del objeto 'arbol' seguido de su función 'imprimir()'.
