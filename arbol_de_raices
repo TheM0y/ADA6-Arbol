@@ -1,0 +1,37 @@
+import math
+
+class Nodo:
+    def __init__(self, valor, nivel=1):
+        self.valor = valor
+        self.nivel = nivel
+        self.hijos = []
+    
+    def agregar_hijos(self, num_hijos, max_nivel):
+        if self.nivel < max_nivel:  
+            for i in range(1, num_hijos + 1):
+                valor_hijo = math.pow(self.valor, 1 / (i + 1))
+                hijo = Nodo(valor_hijo, self.nivel + 1)
+                self.hijos.append(hijo)
+                hijo.agregar_hijos(num_hijos, max_nivel)
+
+class Arbol:
+    def __init__(self, valor_raiz, num_hijos, max_nivel):
+        self.raiz = Nodo(valor_raiz)
+        self.raiz.agregar_hijos(num_hijos, max_nivel)
+    
+    def imprimir(self):
+        self._imprimir_nodo(self.raiz, 0)
+    
+    def _imprimir_nodo(self, nodo, indent):
+        print(" " * indent + f"Nivel {nodo.nivel}: {nodo.valor:.4f}")
+        for hijo in nodo.hijos:
+            self._imprimir_nodo(hijo, indent + 4)
+
+print("Árbol de raíces cuadradas")
+valor_raiz = float(input("Ingrese el valor del nodo raíz: "))
+num_hijos = int(input("Ingrese el número de hijos por nodo: "))
+max_nivel = int(input("Ingrese el nivel máximo del árbol: "))
+
+arbol = Arbol(valor_raiz, num_hijos, max_nivel)
+
+arbol.imprimir()
