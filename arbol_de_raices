@@ -23,7 +23,7 @@ class Arbol:
         self._imprimir_nodo(self.raiz, 0)
     
     def _imprimir_nodo(self, nodo, indent):
-        print(" " * indent + f"Nivel {nodo.nivel}: {nodo.valor:.4f}")
+        print(" " * indent + f"Nivel {nodo.nivel}: {nodo.valor:.3f}")
         for hijo in nodo.hijos:
             self._imprimir_nodo(hijo, indent + 4)
 
